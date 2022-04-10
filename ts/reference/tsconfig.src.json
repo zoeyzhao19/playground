@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "composite":true,
+    "declaration": true,
+    "declarationDir": "distChild/lib/srcdts",
+    "outDir": "distChild/srcdist"
+  },
+  "include": ["./src"]
+}
