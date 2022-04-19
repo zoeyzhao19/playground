@@ -1,0 +1,35 @@
+{
+  "root": "apps/my-app",
+  "projectType": "application",
+  "sourceRoot": "apps/my-app/src",
+  "targets": {
+    "build": {
+      "executor": "@nx-plus/vite:build",
+      "options": {
+        "config": "apps/my-app/vite.config.ts"
+      }
+    },
+    "serve": {
+      "executor": "@nx-plus/vite:server",
+      "options": {
+        "config": "apps/my-app/vite.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/my-app/**/*.{ts,tsx,vue}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/my-app"],
+      "options": {
+        "jestConfig": "apps/my-app/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
